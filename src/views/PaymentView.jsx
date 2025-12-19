@@ -1,6 +1,6 @@
 export default function PaymentView() {
-    return () => {
-        <div>
+    return (
+              <div>
       <h1 className="text-8xl font-bold p-4">Your Cart</h1>
       <div className="flex gap-4">
         <div className=" w-2/3 p-8">
@@ -117,5 +117,5 @@ export default function PaymentView() {
         </div>
       </div>
         </div>
-    }
+    )
 }
