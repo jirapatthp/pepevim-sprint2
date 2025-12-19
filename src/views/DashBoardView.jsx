@@ -91,7 +91,7 @@ const chartConfig3 = {
   },
 };
 
-export function DashBoard() {
+export function DashBoardView() {
   return (
     <ChartContainer config={chartConfig} className="min-h-50 w-full">
       <h1 className="text-xl md:text-2xl font-bold text-center md:text-left">

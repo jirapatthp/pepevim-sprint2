@@ -4,7 +4,9 @@ import HomeView from "./views/HomeView";
 import PaymentView from "./views/PaymentView";
 import { AboutUsView } from "./views/AboutUsView";
 import { ContactView } from "./views/ContactView";
-import DashBoard from "./views/DashBoard";
+import DashBoard from "./views/DashBoardView";
+import LoginView from "./views/LoginView";
+import { SingupView } from "./views/SignupView";
 function App() {
   return (
     <>
@@ -13,7 +15,9 @@ function App() {
       {/* <PaymentView/> */}
       {/* <AboutUsView/> */}
       {/* <ContactView/> */}
-      {/* <DashBoard/> */}
+      {/* <DashBoardView/> */}
+      {/* <LoginView/> */}
+      {/* <SingupView/> */}
     </>
   );
 }
