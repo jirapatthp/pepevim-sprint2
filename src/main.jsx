@@ -10,7 +10,7 @@ import { SingupView } from "./views/SignupView.jsx";
 import PaymentView from "./views/PaymentView.jsx";
 import LoginView from "./views/LoginView.jsx";
 import { ContactView } from "./views/ContactView.jsx";
-import CollectionView from "./views/CollectionView.jsx";
+import CollectionView from "./views/Collection/CollectionView.jsx";
 
 const router = createBrowserRouter([
   {

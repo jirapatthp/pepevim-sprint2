@@ -7,7 +7,7 @@ export default function Navbar() {
       <div className="logoContainer h-full">
         <img src="logo-m.png" alt="logo" className="h-full" />
       </div>
-      <ul className="gap-6 mx-auto hidden md:flex">
+      <ul className=" mx-auto hidden md:flex">
         <li>
           <NavLink
             to="/"
@@ -57,7 +57,7 @@ export default function Navbar() {
         to="/login"
         end
         className={({ isActive }) =>
-          " h-full aspect-square text-white p-1" +
+          " h-full aspect-square text-white p-1 ml-auto md:ml-0" +
           (isActive ? " navlinkActive" : "")
         }
       >
