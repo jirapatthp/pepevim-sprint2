@@ -10,7 +10,7 @@ function LoginView() {
   };
   const [value, setValue] = useState({
     email: "",
-    psw: "",
+    password: "",
   });
   const hdlchange = (e) => {
     setValue({
@@ -54,10 +54,10 @@ function LoginView() {
 
           <div className="relative w-full border-b border-gray-300 flex items-center">
             <input
-              id="psw"
+              id="password"
               type={isShowPassword ? "text" : "password"}
               placeholder="Enter Password"
-              name="psw"
+              name="password"
               required
               className="w-full py-2 pr-10 outline-none border-none bg-transparent"
               onChange={(e) => hdlchange(e)}
