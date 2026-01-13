@@ -1,15 +1,13 @@
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
+import Sigup1 from "../assets/img/sigup1.png";
+import Sigup2 from "../assets/img/sigup2.png";
 
 export const SingupView = () => {
   return (
-    <div className="border border-amber-700 w-full min-h-screen grid grid-cols-3">
-      <div>
-        <img
-          src="https://i.pinimg.com/1200x/4e/4c/a5/4e4ca5ad9ce2786e4862cab8150b4c03.jpg"
-          alt=""
-          className="h-screen object-cover"
-        />
+    <div className=" w-full min-h-screen grid grid-cols-3">
+      <div className="h-screen w-full overflow-hidden">
+        <img src={Sigup1} alt="" className="w-full h-full object-cover" />
       </div>
       <div className="flex flex-col   items-center justify-center w-full">
         <h1 className="text-4xl pb-4">Sign up</h1>
@@ -50,7 +48,7 @@ export const SingupView = () => {
           <input
             type="password"
             placeholder="Enter password"
-            name="pws"
+            name="password"
             required
             className=" w-full py-2 pr-10 outline border-none bg-transparent"
           ></input>
@@ -59,7 +57,7 @@ export const SingupView = () => {
           <input
             type="password"
             placeholder="Repeat password"
-            name="psw-repeat"
+            name="repeat-password"
             required
             className=" w-full py-2 pr-10 outline border-none bg-transparent"
           ></input>
@@ -80,12 +78,8 @@ export const SingupView = () => {
         </form>
       </div>
 
-      <div>
-        <img
-          src="https://i.pinimg.com/1200x/4e/4c/a5/4e4ca5ad9ce2786e4862cab8150b4c03.jpg"
-          alt=""
-          className="h-screen object-cover"
-        />
+       <div className="h-screen w-full overflow-hidden">
+        <img src={Sigup2} alt="" className="w-full h-full object-cover" />
       </div>
     </div>
   );

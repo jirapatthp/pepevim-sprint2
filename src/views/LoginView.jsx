@@ -1,9 +1,12 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
 import Dog from "../assets/img/dog.png";
+import { Link, useNavigate } from "react-router-dom";
+import { SingupView } from "./SignupView";
 
 function LoginView() {
+  const navigate = useNavigate();
   const [isShowPassword, setIsShowPassword] = useState(false);
   const handleShowPassword = () => {
     setIsShowPassword(!isShowPassword);
@@ -72,7 +75,7 @@ function LoginView() {
             </button>
           </div>
 
-          <p className="text-sm flex justify-end underline text-[#A71B79] mt-1">
+          <p className="text-sm flex justify-end underline text-primary mt-1">
             <a href="#">Forgot password?</a>
           </p>
 
@@ -97,10 +100,9 @@ function LoginView() {
         <div className="mt-30">
           <p>
             Don't have an account ?{" "}
-            <a href="#" className="underline text-[#A71B79]">
-              {" "}
+            <Link to="/signup" className="underline text-primary">
               Signup
-            </a>
+            </Link>
           </p>
         </div>
       </div>
