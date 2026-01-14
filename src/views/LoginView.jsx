@@ -33,7 +33,7 @@ function LoginView() {
 
     if (value.password.length < 8 || value.password.length > 64) {
       setErrors({
-        password: "Password must be 8–64 characters",
+        password: "Password must be 8-64 characters",
         form: "",
       });
       return;
@@ -125,14 +125,15 @@ function LoginView() {
           <div className="flex flex-col gap-2 pt-4">
             <button
               type="submit"
-              className="bg-[#CB5585] text-white rounded-full py-2 hover:opacity-70 duration-150"
+              className="bg-[#CB5585] text-white rounded-full py-2 hover:opacity-70 duration-150
+              hover:cursor-pointer"
             >
               Login
             </button>
 
             <button
               type="button"
-              className="flex items-center justify-center gap-2 bg-[#E8E8E8] rounded-full py-2 hover:opacity-70"
+              className="flex items-center justify-center gap-2 bg-[#E8E8E8] rounded-full py-2 hover:opacity-70 hover:cursor-pointer"
             >
               <FcGoogle size={20} />
               <span>Login with Google</span>
