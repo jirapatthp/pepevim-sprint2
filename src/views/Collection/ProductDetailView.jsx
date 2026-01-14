@@ -26,15 +26,26 @@ export default function ProductDetailView() {
           </p>
           <h2 className="text-xl pt-8 font-semibold">size</h2>
           <div className="size-selector pt-2 flex gap-2">
-            <button className=" border-primary border-2 py-2 px-3  rounded-lg text-primary ">S</button>
-            <button className=" border-primary border-2 py-2 px-3  rounded-lg text-primary ">M</button>
-            <button className=" border-primary border-2 py-2 px-3  rounded-lg text-primary ">L</button>
-            <button className=" border-primary border-2 py-2 px-3  rounded-lg text-primary ">XL</button>
+            <button className=" border-primary border-2 py-2 px-3  rounded-lg text-primary ">
+              S
+            </button>
+            <button className=" border-primary border-2 py-2 px-3  rounded-lg text-primary ">
+              M
+            </button>
+            <button className=" border-primary border-2 py-2 px-3  rounded-lg text-primary ">
+              L
+            </button>
+            <button className=" border-primary border-2 py-2 px-3  rounded-lg text-primary ">
+              XL
+            </button>
           </div>
           <h2 className="text-xl pt-8 font-semibold">Quantity</h2>
-          <div className="Quantity flex h-10">            
-<QuantityButton/></div>
-          <button className="mt-4 border-primary border-2 p-4 w-8/10 mx-auto text-primary ">Add to cart</button>
+          <div className="Quantity flex h-10">
+            <QuantityButton />
+          </div>
+          <button className="mt-4 border-primary border-2 p-4 w-8/10 mx-auto text-primary ">
+            Add to cart
+          </button>
         </div>
       </section>
       <Footer />
