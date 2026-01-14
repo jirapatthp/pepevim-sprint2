@@ -41,6 +41,7 @@ const router = createBrowserRouter([
           { path: "payment", element: <PaymentView /> },
           { path: "order", element: <ConfirmOrderView /> },
           { path: "dashboard", element: <DashBoardView/> },
+          { path: "checkout", element: <ConfirmOrderView /> },
         ],
       },
     ],

@@ -1,109 +1,152 @@
 import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Dog from "../assets/img/dog.png";
-import { Link, useNavigate } from "react-router-dom";
-import { SingupView } from "./SignupView";
 
 function LoginView() {
-  const [isShowPassword, setIsShowPassword] = useState(false);
-  const handleShowPassword = () => {
-    setIsShowPassword(!isShowPassword);
-  };
   const [value, setValue] = useState({
     email: "",
     password: "",
   });
+
+  const [errors, setErrors] = useState({
+    password: "",
+    form: "",
+  });
+
+  const [showPassword, setShowPassword] = useState(false);
+
   const hdlChange = (e) => {
-    setValue({
-      ...value,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setValue((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    // clear error when user types
+    setErrors({ password: "", form: "" });
   };
+
   const hdlSubmit = (e) => {
     e.preventDefault();
 
-    console.log(value);
-    console.log("hello 🐱kitty");
+    if (value.password.length < 8 || value.password.length > 64) {
+      setErrors({
+        password: "Password must be 8–64 characters",
+        form: "",
+      });
+      return;
+    }
+
+    console.log("payload:", value);
   };
 
   return (
-    <div className="flex  min-h-screen ">
+    <div className="flex min-h-screen">
+      {/* LEFT IMAGE */}
       <img
         src={Dog}
-        alt=""
+        alt="login"
         className="hidden md:block w-1/2 h-screen object-cover bg-[#A7CBCB]"
       />
-      <div className="flex flex-col   items-center justify-center w-full">
-        <h1 className="text-4xl ">VELVÉ</h1>
+
+      {/* RIGHT CONTENT */}
+      <div className="flex flex-col items-center justify-center w-full">
+        <h1 className="text-4xl">VELVÉ</h1>
         <h2 className="text-2xl">Welcome back</h2>
 
-        {/* login form */}
-        <form className="flex flex-col pt-6 w-2/3 gap-2 " onSubmit={hdlSubmit}>
-          <div className=" border-b border-gray-300 ">
+        {/* LOGIN FORM */}
+        <form
+          noValidate
+          autoComplete="on"
+          onSubmit={hdlSubmit}
+          className="flex flex-col pt-6 w-2/3 gap-3"
+        >
+          {/* EMAIL */}
+          <div className="border-b border-gray-300">
             <label className="text-[#C6C6C6] text-sm">Email</label>
             <input
               type="email"
-              placeholder="Enter email"
               name="email"
+              placeholder="Enter email"
+              autoComplete="username"
+              maxLength={254}
+              value={value.email}
+              onChange={hdlChange}
+              className="w-full py-2 outline-none bg-transparent"
               required
-              className=" w-full py-2 pr-10 outline-none border-none bg-transparent"
-              onChange={(e) => hdlChange(e)}
             />
           </div>
 
-          <label className="text-[#C6C6C6] text-sm">Password</label>
+          {/* PASSWORD */}
+          <label className="text-[#C6C6C6] text-sm mt-2">Password</label>
 
-          <div className="relative w-full border-b border-gray-300 flex items-center">
+          <div className="relative border-b border-gray-300">
             <input
-              id="password"
-              type={isShowPassword ? "text" : "password"}
-              placeholder="Enter Password"
+              type={showPassword ? "text" : "password"}
               name="password"
+              placeholder="Enter password"
+              autoComplete="current-password"
+              minLength={8}
+              maxLength={64}
+              value={value.password}
+              onChange={hdlChange}
+              className="w-full py-2 pr-10 outline-none bg-transparent"
               required
-              className="w-full py-2 pr-10 outline-none border-none bg-transparent"
-              onChange={(e) => hdlChange(e)}
             />
 
             <button
               type="button"
-              onClick={handleShowPassword}
-              className="absolute right-0 flex items-center justify-center p-2"
+              onClick={() => setShowPassword((prev) => !prev)}
+              className="absolute right-0 top-2 p-2"
             >
-              {isShowPassword ? <FaRegEye /> : <FaRegEyeSlash />}
+              {showPassword ? <FaRegEye /> : <FaRegEyeSlash />}
             </button>
           </div>
 
+          {/* PASSWORD ERROR */}
+          {errors.password && (
+            <p className="text-red-500 text-sm mt-1">{errors.password}</p>
+          )}
+
+          {/* FORM / SERVER ERROR */}
+          {errors.form && (
+            <p className="text-red-600 text-sm text-center mt-2">
+              {errors.form}
+            </p>
+          )}
+
           <p className="text-sm flex justify-end underline text-primary mt-1">
-            <a href="#">Forgot password?</a>
+            <Link to="/forgot-password">Forgot password?</Link>
           </p>
 
-          {/* button */}
+          {/* BUTTONS */}
           <div className="flex flex-col gap-2 pt-4">
             <button
               type="submit"
-              className="bg-[#CB5585] text-white rounded-full py-2 hover:opacity-70 hover:cursor-pointer duration-150"
+              className="bg-[#CB5585] text-white rounded-full py-2 hover:opacity-70 duration-150"
             >
               Login
             </button>
 
             <button
               type="button"
-              className="flex items-center justify-center gap-2 bg-[#E8E8E8] text-black rounded-full py-2 hover:opacity-70 hover:cursor-pointer "
+              className="flex items-center justify-center gap-2 bg-[#E8E8E8] rounded-full py-2 hover:opacity-70"
             >
               <FcGoogle size={20} />
               <span>Login with Google</span>
             </button>
           </div>
         </form>
-        <div className="mt-30">
-          <p>
-            Don't have an account ?{" "}
-            <Link to="/signup" className="underline text-primary">
-              Signup
-            </Link>
-          </p>
-        </div>
+
+        {/* SIGNUP LINK */}
+        <p className="mt-6">
+          Don&apos;t have an account?{" "}
+          <Link to="/signup" className="underline text-primary">
+            Signup
+          </Link>
+        </p>
       </div>
     </div>
   );

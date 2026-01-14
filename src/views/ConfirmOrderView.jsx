@@ -74,17 +74,17 @@ export default function ConfirmOrderView() {
         <div className="flex flex-col p-2 gap-2">
           <div className="text-4xl">Payment</div>
           <div>All transactions are secure and encrypted.</div>
-          <div className="flex">
+          <div className="flex gap-2">
             <div>
               <img
                 src="https://play-lh.googleusercontent.com/6I2IYbIg4rhGUgs0UxP_5q6wmJmlBjBrlQ9f0_FAN94yOzwmrtEteifCdPPd1-chY_NX=w600-h300-pc0xffffff-pd"
-                className="w-30 h-15 hover:border-2"
+                className="h-20 hover:border-2"
               ></img>
             </div>
             <div>
               <img
-                src="https://www.bot.or.th/content/dam/bot/icons/icon-thaiqr.png"
-                className="w-30 h-15 hover:border-2"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl0RcVjqOd7ijzqhMX7okRVtx5P4W8Zy2z5A&s"
+                className="h-20 hover:border-2"
               ></img>
             </div>
           </div>
@@ -103,13 +103,13 @@ export default function ConfirmOrderView() {
           <h2>Quanity</h2>
           <h2>Price</h2>
         </div>
-        <div className="flex justify-between p-4 pb-10 pt-5 border-b-2">
+        <div className="flex justify-between p-2 pb-10 pt-5 border-b-2">
           <div className="flex p-2 gap-2">
-            <img src="https://i.redd.it/zj7m5n0a2xx91.jpg" className="h-30" />
+            <img src="/1.png" className="h-35" />
             <div className="flex items-center">ITEM HEADER</div>
           </div>
-          <div className="flex items-center">99</div>
-          <div className="flex items-center">999,999 Baht</div>
+          <div className="flex items-center">3</div>
+          <div className="flex items-center">30,000 Baht</div>
         </div>
         <div className="flex flex-col items-center p-2 gap-2">
           <div className="flex justify-between w-full">
@@ -128,11 +128,11 @@ export default function ConfirmOrderView() {
           </div>
           <div className="flex justify-between w-full">
             <div>shipping</div>
-            <div>99 Baht</div>
+            <div>1,000 Baht</div>
           </div>
           <div className="flex justify-between w-full">
             <div>Total</div>
-            <div>30,099 Baht</div>
+            <div>31,000 Baht</div>
           </div>
           <button
             type="button"
