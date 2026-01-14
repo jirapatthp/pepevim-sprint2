@@ -9,3 +9,16 @@ export default function Timer() {
     </div>
   );
 }
+
+function TimeBox({ label, value }) {
+  return (
+    <div className="flex flex-col items-center bg-white/15 backdrop-blur px-4 py-3 rounded-md min-w-17.5 shadow-md">
+      <span className="text-2xl font-bold tabular-nums">
+        {String(value).padStart(2, "0")}
+      </span>
+      <span className="text-xs uppercase tracking-wide opacity-80">
+        {label}
+      </span>
+    </div>
+  );
+}
