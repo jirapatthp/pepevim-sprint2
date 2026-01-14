@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { AboutUs } from "./components/aboutUs";
 import { Contact } from "./components/contact";
 import Particles from './Particles';
@@ -28,6 +29,16 @@ function App() {
 
     </main>
   )
+=======
+import { Outlet } from "react-router-dom";
+
+function App() {
+  return (
+    <div className="min-h-screen">
+      <Outlet />
+    </div>
+  );
+>>>>>>> upstream/main
 }
 
 export default App;
