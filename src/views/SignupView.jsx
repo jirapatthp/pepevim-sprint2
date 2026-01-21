@@ -135,7 +135,6 @@ export const SignupView = () => {
               name="email"
               value={value.email}
               onChange={hdlChange}
-              autoComplete="email"
               className="w-full py-2 outline-none bg-transparent"
             />
           </div>
@@ -148,7 +147,6 @@ export const SignupView = () => {
               name="password"
               value={value.password}
               onChange={hdlChange}
-              autoComplete="new-password"
               className="w-full py-2 pr-10 outline-none bg-transparent"
             />
             <button
@@ -171,7 +169,6 @@ export const SignupView = () => {
               name="confirm_password"
               value={value.confirm_password}
               onChange={hdlChange}
-              autoComplete="new-password"
               className="w-full py-2 pr-10 outline-none bg-transparent"
             />
             <button
