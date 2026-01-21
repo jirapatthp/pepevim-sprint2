@@ -43,7 +43,7 @@ export function CartProvider({ children }) {
 
     setCart((prev) =>
       prev.map((item) =>
-        item.id === id ? { ...item, quantity: qty } : item
+        item._id === id ? { ...item, quantity: qty } : item
       )
     );
   };

@@ -29,11 +29,11 @@ export default function CartPage() {
               -
             </button>
             <span>{item.quantity}</span>
-            <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>
+            <button onClick={() => updateQuantity(item._id, item.quantity + 1)}>
               +
             </button>
             <button
-              onClick={() => removeFromCart(item.id)}
+              onClick={() => removeFromCart(item._id)}
               className="text-red-500"
             >
               ลบ
