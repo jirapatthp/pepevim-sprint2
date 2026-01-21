@@ -126,11 +126,12 @@ export default function ConfirmOrderView() {
           <button
             type="button"
             className="border-2 rounded-sm w-3/5 bg-gray-200 p-2"
+            onclick="openPopup()"
           >
-            Confirm Order
+            สั่งซื้อสินค้า
           </button>
         </div>
       </div>
     </div>
-  )
+  );
 }

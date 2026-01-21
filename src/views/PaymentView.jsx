@@ -1,6 +1,6 @@
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import QuantityButton from "@/components/QuantityButton";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function PaymentView() {
   const navigate = useNavigate();
@@ -104,7 +104,7 @@ export default function PaymentView() {
           <div className="bg-[#C662A5] border-2 rounded-2xl flex flex-col justify-center items-center gap-8 p-4 w-6/9">
             <div className="flex justify-between w-full text-white font-bold">
               <div>Estimated total</div>
-              <div>5,000.00 B</div>
+              <div>30,000.00 B</div>
             </div>
             <button
               onClick={handleCheckOut}
