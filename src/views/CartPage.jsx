@@ -13,7 +13,7 @@ export default function CartPage() {
     <div>
       <h1 className="text-8xl font-bold p-20">Cart</h1>
       <div className="flex gap-4">
-        <div className="max-w-xl mx-auto p-6 space-y-4">
+        <div className="max-w-xl mx-auto p-6 space-y-4 w-full">
           {cart.length === 0 && <p>ไม่มีสินค้าในตะกร้า</p>}
 
           {cart.map((item) => (
@@ -22,7 +22,7 @@ export default function CartPage() {
               className="flex justify-between items-center border p-3 rounded"
             >
               <div>
-                <p className="font-semibold">{item.productName}</p>
+                <p className="font-semibold">{item.productName} | size: {item.size}</p>
                 <p>{item.price} บาท</p>
               </div>
 

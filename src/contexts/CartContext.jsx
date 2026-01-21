@@ -20,17 +20,17 @@ export function CartProvider({ children }) {
 
   const addToCart = (product) => {
     setCart((prev) => {
-      const exist = prev.find((item) => item._id === product._id);
+      const exist = prev.find((item) => item._id === product._id && item.size===product.size);
       console.log(product)
       if (exist) {
         return prev.map((item) =>
-          item._id === product._id
-            ? { ...item, quantity: item.quantity + 1 }
+          item._id === product._id && item.size === product.size
+            ? { ...item, quantity: item.quantity + product.quantity }
             : item
         );
       }
 
-      return [...prev, { ...product, quantity: 1 }];
+      return [...prev,product];
     });
   };
 

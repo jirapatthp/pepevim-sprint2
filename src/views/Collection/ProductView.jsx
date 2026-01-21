@@ -2,14 +2,14 @@ import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 
 export default function ProductView() {
 
+  const apibase = import.meta.env.VITE_API_URL;
   const [products, setProduct] = useState([]);
   const fetchProduct = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/v2/products");
+      const res = await axios.get(`${apibase}/api/v2/products`);
       setProduct(res.data.data);
     } catch (error) {}
   };

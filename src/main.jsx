@@ -59,7 +59,6 @@ const router = createBrowserRouter([
           },
           { path: "payment", element: <PaymentView /> },
           { path: "order", element: <ConfirmOrderView /> },
-
           { path: "checkout", element: <ConfirmOrderView /> },
           { path: "profile", element: <ProfilePage /> },
           { path: "carttest", element: <CartPage /> },
