@@ -4,7 +4,14 @@ import { NavLink } from "react-router-dom";
 import ButtonAccount from "../components/ButtonAccount";
 
 import { CartIcon } from "./CartIcon";
+
+import { useAuth } from "../contexts/AuthContext";
+
 export default function Navbar() {
+  const { user } = useAuth();
+
+  const isUser = user;
+
   return (
     <nav className="w-full h-18 bg-primary flex justify-start items-center text-center py-5 px-12 gap-4 text-(--text-primary)  shadow-lg">
       <div className="logoContainer h-full">
@@ -33,17 +40,22 @@ export default function Navbar() {
             COLLECTION
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to="/dashboard"
-            end
-            className={({ isActive }) =>
-              "p-6" + (isActive ? " navlinkActive" : "")
-            }
-          >
-            BEST SELLER
-          </NavLink>
-        </li>
+
+        {/* dashboard */}
+        {isUser && (
+          <li>
+            <NavLink
+              to="/dashboard"
+              end
+              className={({ isActive }) =>
+                "p-6" + (isActive ? " navlinkActive" : "")
+              }
+            >
+              BEST SELLER
+            </NavLink>
+          </li>
+        )}
+
         <li>
           <NavLink
             to="/about"
@@ -77,7 +89,7 @@ export default function Navbar() {
           (isActive ? " navlinkActive" : "")
         }
       >
-        <CartIcon/>
+        <CartIcon />
       </NavLink>
     </nav>
   );
