@@ -18,6 +18,7 @@ export default function CollectionView() {
               product={collection}
               className={"aspect-square"}
               id={collection._id}
+              image={collection.image}
             />
           ))}
         </div>
