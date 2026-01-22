@@ -1,12 +1,13 @@
 import ProfileOverview from "@/components/profile/ProfileOverview";
-
+import { useNavigate } from "react-router";
 import { useAuth } from "@/contexts/AuthContext";
 
 export default function ProfilePage() {
+   const navigate = useNavigate();
   const { user } = useAuth();
 
   if (!user) {
-    return <div className="p-6 ">User not found</div>;
+    return navigate("/");
   }
 
   return (

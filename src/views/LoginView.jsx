@@ -79,7 +79,7 @@ function LoginView() {
         {/* LOGIN FORM */}
         <form
           noValidate
-          autoComplete="on"
+          autoComplete="off"
           onSubmit={hdlSubmit}
           className="flex flex-col pt-6 w-2/3 gap-3"
         >
@@ -90,7 +90,6 @@ function LoginView() {
               type="email"
               name="email"
               placeholder="Enter email"
-              autoComplete="username"
               maxLength={254}
               value={value.email}
               onChange={hdlChange}
@@ -107,7 +106,6 @@ function LoginView() {
               type={showPassword ? "text" : "password"}
               name="password"
               placeholder="Enter password"
-              autoComplete="current-password"
               minLength={8}
               maxLength={64}
               value={value.password}
