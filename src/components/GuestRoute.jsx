@@ -4,9 +4,9 @@ import { Navigate } from "react-router-dom";
 import LoadingPage from "./LoadingPage";
 
 const GuestRoute = ({ children }) => {
-  const { user, Loading } = useAuth();
+  const { user, loading } = useAuth();
 
-  if (Loading) {
+  if (loading) {
     return <LoadingPage />;
   }
 
