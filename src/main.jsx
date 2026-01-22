@@ -19,6 +19,7 @@ import CartPage from "./views/CartPage.jsx";
 import { AuthProvider } from "./contexts/AuthContext.jsx";
 import GuestRoute from "./components/GuestRoute.jsx";
 import ProfilePage from "./views/ProfilePage.jsx";
+import ProtectRoute from "./components/ProtectRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -38,7 +39,15 @@ const router = createBrowserRouter([
           { path: "collection", element: <CollectionView /> },
           { path: "collection/:id", element: <ProductView /> },
           { path: "products/:id", element: <ProductDetailView /> },
-          { path: "dashboard", element: <DashBoardView2 /> },
+
+          {
+            path: "dashboard",
+            element: (
+              <ProtectRoute>
+                <DashBoardView2 />
+              </ProtectRoute>
+            ),
+          },
           { path: "about", element: <AboutUsView /> },
           { path: "contact", element: <ContactView /> },
           {

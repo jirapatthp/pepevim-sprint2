@@ -12,13 +12,11 @@ export default function ProductDetailView() {
   const [quantity, setQuantity] = useState(1);
 
   const apibase = import.meta.env.VITE_API_URL;
-  
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(
-          `${apibase}/api/v2/products/${id}`,
-        );
+        const res = await axios.get(`${apibase}/api/v2/products/${id}`);
         setProduct(res.data.data);
       } catch (error) {
         console.error(error);
@@ -36,7 +34,12 @@ export default function ProductDetailView() {
   return (
     <section className="py-8 px-16 md:flex justify-center">
       <div className="imgHolder md:w-4/10 py-4 flex flex-col items-center justify-center">
-        <img src="/1.png" alt="" className="aspect-square w-full max-w-120" />
+        {/* <img src="/1.png" alt="" className="aspect-square w-full max-w-120" /> */}
+        <img
+          src={product.image}
+          alt={product.productName}
+          className="aspect-square w-full max-w-120"
+        />
         {/* <div className="hoverimg hidden  w-full max-h-32 max-w-120 justify-between py-4">
           <img src="/1.png" alt="" className="md:h-full aspect-square" />
           <img src="/1.png" alt="" className="md:h-full aspect-square" />
@@ -75,7 +78,11 @@ export default function ProductDetailView() {
         <div className="Quantity flex h-10">
           <QuantityButton quantity={quantity} setQuantity={setQuantity} />
         </div>
-        <AddToCartButton product={product} quantity={quantity} size={selectedSize}/>
+        <AddToCartButton
+          product={product}
+          quantity={quantity}
+          size={selectedSize}
+        />
       </div>
     </section>
   );

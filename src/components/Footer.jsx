@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Footer = () => {
   return (
@@ -12,9 +12,8 @@ const Footer = () => {
             className="w-auto h-8 object-contain shrink-0"
           />
           <h4 className="text-white text-xs mt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam,
+            More than clothing — VELVÉ is about style that feels effortless and
+            real.
           </h4>
           <a className="text-white mt-auto hidden md:inline"> back to top</a>
         </div>
@@ -27,9 +26,11 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="w-full h-8 bg-[#8F1366] text-white text-center">2025-2026 pepevim all right reserved</div>
+      <div className="w-full h-8 bg-[#8F1366] text-white text-center">
+        2025-2026 pepevim all right reserved
+      </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
