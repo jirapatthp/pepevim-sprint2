@@ -51,7 +51,13 @@ export default function HomeView() {
         <h1 className="text-5xl font-bold">New Collection</h1>
         <div className="item-container w-full flex justify-center gap-4">
           {collection.slice(0, 3).map((collection) => (
-            <CollectionCard key={collection._id} product={collection} className="md:h-100"id={collection._id} />
+            <CollectionCard
+              key={collection._id}
+              product={collection}
+              className="md:h-100"
+              id={collection._id}
+              image={collection.image}
+            />
           ))}
         </div>
       </section>
